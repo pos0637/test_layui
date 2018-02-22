@@ -1,0 +1,23 @@
+{
+  "name": "test_layui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -a 0.0.0.0 -p 8000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pos0637/test_layui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pos0637/test_layui/issues"
+  },
+  "homepage": "https://github.com/pos0637/test_layui#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
