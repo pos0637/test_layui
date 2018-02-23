@@ -20,7 +20,7 @@
     <script type="text/javascript" src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <script type="text/javascript" src="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/contextMenu/jquery.contextMenu.min.js"></script>
-    <script type="text/javascript" src="../../../vendors/layui/layui-v2.2.5/layui.js"></script>
+    <script type="text/javascript" src="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/layui/layui.js"></script>
     <script type="text/javascript" src="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/frame/js/fsDict.js?v=1.7.1"></script>
     <script type="text/javascript" src="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/frame/js/fs.js?v=1.7.1"></script>
     <script type="text/javascript" src="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/frame/js/main.js?v=1.7.1"></script>
@@ -90,17 +90,17 @@
                             <div class="fsDatagridCols">
                                 <p type="numbers" title="#" />
                                 <p checkbox="true" />
-                                <p field="id" title="ID" width="100" sort="true" />
-                                <p field="name" title="名称" width="30%" sort="true" />
-                                <p field="type" title="类型" width="150" dict="type" />
-                                <p field="path" title="资源路径" width="100" />
-                                <p field="state" title="状态" width="100" templet="#stateTpl" />
-                                <p field="remark" title="备注" width="100" />
+                                <p field="id" title="ID" align="center" width="100" sort="true" />
+                                <p field="name" title="名称" align="center" width="150" sort="true" />
+                                <p field="type" title="类型" align="center" width="150" dict="type" />
+                                <p field="path" title="资源路径" align="center" width="30%" sort="true" />
+                                <p field="state" title="状态" align="center" width="100" templet="#stateTpl" />
+                                <p field="remark" title="备注" align="center" width="100" />
                                 <p fixed="right" align="center" toolbar="#barDemo" title="操作" width="220" />
                             </div>
 
                             <script type="text/html" id="stateTpl">
-				                <input type="checkbox" name="state" lay-skin="switch" disabled lay-text="开启|关闭" {{ d.state == 1 ? 'checked' : '' }}>
+				                <input type="checkbox" name="state" lay-skin="switch" disabled lay-text="开启|关闭" {{ d.state == 0 ? 'checked' : '' }}>
 			                </script>
                             <script type="text/html" id="barDemo">
                                 <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="top" topUrl="edit.html" topMode="readonly" topWidth="800px" topHeight="600px" topTitle="查看demo" inputs="id:">查看</a>
