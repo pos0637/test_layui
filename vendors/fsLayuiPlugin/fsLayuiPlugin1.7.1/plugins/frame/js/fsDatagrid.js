@@ -150,7 +150,7 @@ layui.define(["fsCommon","table",'laypage','fsConfig','form','fsButtonCommon'], 
 	    fsSortType : thisDatagrid.config.fsSortType,
 	    where : formData, //增加条件
 	    page: isPage == "1",
-	    method : "post",
+	    method : "get",
 //	    skin : 'row',
 	    height: height, //容器高度
 	    limits: defaultLimits,//每页数据选择项

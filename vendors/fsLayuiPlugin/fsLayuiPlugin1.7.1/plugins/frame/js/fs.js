@@ -6,7 +6,7 @@
  * @License：MIT
  */
 layui.config({
-  base : "http://127.0.0.1:8000/vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/frame/js/",//设定扩展的Layui模块的所在目录，一般用于外部模块扩展
+  	base : "http://127.0.0.1:8000/vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/frame/js/",//设定扩展的Layui模块的所在目录，一般用于外部模块扩展
 	version : '1.7.1'
 });
 
