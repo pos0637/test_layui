@@ -36,21 +36,15 @@
                         <form class="layui-form" id="query_form">
                             <div class="layui-form-item">
                                 <div class="layui-inline">
-                                    <label class="layui-form-mid">id：</label>
-                                    <div class="layui-input-inline" style="width: 100px;">
-                                        <input type="tel" name="id" autocomplete="off" class="layui-input" />
-                                    </div>
-                                </div>
-                                <div class="layui-inline">
                                     <label class="layui-form-mid">名称：</label>
                                     <div class="layui-input-inline" style="width: 100px;">
                                         <input type="text" name="name" autocomplete="off" class="layui-input" />
                                     </div>
                                 </div>
                                 <div class="layui-inline">
-                                    <label class="layui-form-mid">时间：</label>
-                                    <div class="layui-input-inline" style="">
-                                        <input type="text" name="createDate" autocomplete="off" class="layui-input fsDate" dateRange="1" placeholder=" - " />
+                                    <label class="layui-form-mid">路径：</label>
+                                    <div class="layui-input-inline" style="width: 200px;">
+                                        <input type="text" name="path" autocomplete="off" class="layui-input" />
                                     </div>
                                 </div>
                                 <div class="layui-inline">
@@ -60,33 +54,24 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         </form>
                     </div>
                 </div>
                 <div class="layui-col-md12">
-                    <div class="layui-row grid-demo">
+                    <div class="layui-row grid-resources">
                         <div class="layui-col-md12">
-                            <button class="layui-btn" function="top" topUrl="add.html" topWidth="800px" isMaximize="0" topHeight="600px"
-                                topTitle="新增demo">
+                            <button class="layui-btn" function="top" topUrl="ui/system/resources/add.html" topWidth="800px" isMaximize="0" topHeight="500px" topTitle="新增资源">
                                 <i class="layui-icon">&#xe654;</i>新增
                             </button>
-                            <button class="layui-btn layui-btn-danger" function="submit" url="/fsbus/1002" isMutiDml="1" isConfirm="1" confirmMsg="是否确定删除选中的数据？"
-                                inputs="id:">
+                            <button class="layui-btn layui-btn-danger" function="submit" url="/fsbus/1002" isMutiDml="1" isConfirm="1" confirmMsg="是否确定删除选中的数据？" inputs="id:">
                                 <i class="layui-icon">&#xe640;</i>批量删除
                             </button>
                             <button class="layui-btn" function="refresh">
                                 <i class="layui-icon">&#x1002;</i>刷新
                             </button>
-                            <button class="layui-btn" function="test">
-                                <i class="layui-icon">&#xe756;</i>测试
-                            </button>
                         </div>
                         <div class="layui-col-md12">
-                            <table id="fsDatagrid" lay-filter="fsDatagrid" class="fsDatagrid" isLoad="1" url="api/v1/system/resources" isPage="1" sortType="1" pageSize="10"
-                                defaultForm="query_form" height="full-135"></table>
-
+                            <table id="fsDatagrid" lay-filter="fsDatagrid" class="fsDatagrid" isLoad="1" url="api/v1/system/resources" isPage="1" sortType="1" pageSize="10" defaultForm="query_form" height="full-135"></table>
                             <div class="fsDatagridCols">
                                 <p type="numbers" title="#" />
                                 <p checkbox="true" />

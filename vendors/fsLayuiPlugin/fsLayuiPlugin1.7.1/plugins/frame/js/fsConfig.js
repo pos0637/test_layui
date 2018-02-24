@@ -26,14 +26,14 @@ layui.define([], function (exports) {
 	fsConfig["global"] = {
 		"servletUrl":"http://127.0.0.1:8080/", //异步请求地址,本地工程可以不填
 		"loginUrl" : "/login", //登录url
-		"uploadUrl" : "https://fs.fallsea.com/upload", //上传附件url
-		"uploadHtmlUrl" : "/plugins/frame/views/upload.html", //上传附件html地址，默认/plugins/frame/views/upload.html
+		"uploadUrl" : "http://127.0.0.1:8080/file/upload", //上传附件url
+		"uploadHtmlUrl" : "vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/frame/views/upload.html", //上传附件html地址，默认/plugins/frame/views/upload.html
 		"loadDataType":"1",//加载数据类型，1：使用缓存数据，0：实时查询，默认0  （编辑或查看是否取缓存数据）
 		"datagridSubmitType":"1",//数据表格提交类型，1：原数据提交，2：增删改标签提交（fsType）， 默认1
 		"result" : { //响应结果配置
-	    "statusName": "errorNo", //数据状态的字段名称，默认：errorNo
-	    "msgName": "errorInfo", //状态信息的字段名称，默认：errorInfo
-	    "dataName" : "results.data", //非表格数据的字段名称，默认：results.data
+	    "statusName": "errno", //数据状态的字段名称，默认：errorNo
+	    "msgName": "message", //状态信息的字段名称，默认：errorInfo
+	    "dataName" : "data", //非表格数据的字段名称，默认：results.data
 		},
 		"page" : { //分页配置
 			"sortType":"0",//默认排序方式，0：本地排序，1：异步排序，不配置默认为0
@@ -42,9 +42,9 @@ layui.define([], function (exports) {
 				"limitName": "pageSize" //每页数据量的参数名，默认：pageSize
 			},
 			"response": {//响应配置
-				"countName": "results.data.total", //数据总数的字段名称，默认：results.data.total
-				"dataName" : "results.data", //数据列表的字段名称，默认：results.data
-				"dataNamePage": "results.data.list" //分页数据列表的字段名称，默认：results.data.list
+				"countName": "data.total", //数据总数的字段名称，默认：results.data.total
+				"dataName" : "data", //数据列表的字段名称，默认：results.data
+				"dataNamePage": "data.list" //分页数据列表的字段名称，默认：results.data.list
 			}//,
 //			"limit":10,//每页分页数量。默认20
 //			"limits":[10,20,30,50,100]//每页数据选择项，默认[10,20,30,50,100]
