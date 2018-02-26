@@ -74,7 +74,7 @@ layui.define(['element',"fsConfig","fsCommon"], function(exports){
 				return;
 			}
 			
-			fsCommon.invoke(url,{},function(data){
+			fsCommon.invoke(url,"POST",{},function(data){
   			if(data[statusName] == "0")
   			{
   				menuConfig.data = $.result(data,dataName);

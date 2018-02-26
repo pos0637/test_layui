@@ -215,7 +215,7 @@ layui.define(["fsCommon","table",'laypage','fsConfig','form','fsButtonCommon'], 
   						
   					}
   					
-  					fsCommon.invoke(url,param,function(result){
+  					fsCommon.invoke(url,"POST",param,function(result){
   						if(result[statusName] == "0")
   						{
   							var list = $.result(result,dataName);
@@ -348,9 +348,9 @@ layui.define(["fsCommon","table",'laypage','fsConfig','form','fsButtonCommon'], 
       	case "submit" :
       		 //提交
         	function submitForm(){
-        		var funcNo = _this.attr("funcNo");
-            
-            var url = _this.attr("url");//请求url
+        		var funcNo = _this.attr("funcNo");            
+						var url = _this.attr("url");//请求url
+						var method =  _this.attr("method") || "POST";
             
             if($.isEmpty(funcNo) && $.isEmpty(url)){
             	fsCommon.warnMsg("功能号或请求地址为空！");
@@ -369,7 +369,7 @@ layui.define(["fsCommon","table",'laypage','fsConfig','form','fsButtonCommon'], 
             }
             
             //请求数据
-            fsCommon.invoke(url,param,function(data)
+            fsCommon.invoke(url,method,param,function(data)
             {
               if(data[statusName] == "0")
               {

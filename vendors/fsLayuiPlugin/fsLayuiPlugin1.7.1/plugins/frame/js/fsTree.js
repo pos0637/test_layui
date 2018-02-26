@@ -294,7 +294,7 @@ layui.define(['layer',"fsCommon",'fsConfig'], function(exports){
 			}
 			_this.showTree(array);
 		}else{
-			fsCommon.invoke(url,otherParam,function(data)
+			fsCommon.invoke(url,"POST",otherParam,function(data)
 			{
 				if(data[statusName] == "0")
 				{
