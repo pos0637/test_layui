@@ -25,7 +25,7 @@ layui.define(['element',"fsConfig","fsCommon"], function(exports){
 				{"menuId":"12","menuName":"其他页面","menuIcon":"","menuHref":"","parentMenuId":"1"},
 				{"menuId":"111","menuName":"首页","menuIcon":"&#xe68e;","menuHref":"ui/system/home/index.html?v=1.7.1","parentMenuId":"11"},
 				{"menuId":"datagrid","menuName":"数据表格","menuIcon":"fa-list","menuHref":"ui/system/resources/index.html?v=1.7.1","parentMenuId":"11"},
-				{"menuId":"datagrid2","menuName":"数据表格2","menuIcon":"fa-list","menuHref":"views/datagrid2/index.html","parentMenuId":"11"},
+				{"menuId":"datagrid2","menuName":"数据表格2","menuIcon":"fa-list","menuHref":"ui/system/permissions/index.html?v=1.7.1","parentMenuId":"11"},
 				{"menuId":"treeDatagrid","menuName":"数+表格","menuIcon":"fa-list","menuHref":"views/treeDatagrid/index.html","parentMenuId":"11"},
 				{"menuId":"multiDatagrid","menuName":"多数据表格","menuIcon":"fa-list","menuHref":"views/multiDatagrid/index.html","parentMenuId":"11"},
 				{"menuId":"tabDatagrid","menuName":"tab数据表格","menuIcon":"fa-list","menuHref":"views/tabDatagrid/index.html","parentMenuId":"11"},
