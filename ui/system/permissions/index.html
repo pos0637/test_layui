@@ -14,17 +14,17 @@
     <meta name="format-detection" content="telephone=no" />
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../../vendors/layui-treetable/layui/css/layui.css" media="all" />
     <link rel="stylesheet" type="text/css" href="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/contextMenu/jquery.contextMenu.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/css/fs.css?v=1.7.1" />
     <script type="text/javascript" src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <script type="text/javascript" src="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/contextMenu/jquery.contextMenu.min.js"></script>
-    <script type="text/javascript" src="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/layui/layui.js"></script>
+    <script type="text/javascript" src="../../../vendors/layui-treetable/layui/layui.js"></script>
     <script type="text/javascript" src="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/frame/js/fsDict.js?v=1.7.1"></script>
     <script type="text/javascript" src="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/frame/js/fs.js?v=1.7.1"></script>
     <script type="text/javascript" src="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/frame/js/main.js?v=1.7.1"></script>
-    <script type="text/javascript" src="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/frame/js/frame.js?v=1.7.0"></script>
+    <script type="text/javascript" src="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/frame/js/frame.js?v=1.7.1"></script>
 </head>
 
 <body>
@@ -32,33 +32,24 @@
         <div class="layui-fluid">
             <div class="layui-row layui-col-space1">                
                 <div class="layui-col-md12">
+                    <div class="layui-form-query">
+                        <form class="layui-form" id="query_form">
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <button class="layui-btn" function="top" topUrl="ui/system/resources/add.html" topWidth="800px" isMaximize="0" topHeight="500px" topTitle="新增资源">
+                                        <i class="layui-icon">&#xe654;</i>添加根菜单
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                     <div class="layui-row grid-resources">
                         <div class="layui-col-md12">
-                            <button class="layui-btn" function="top" topUrl="ui/system/resources/add.html" topWidth="800px" isMaximize="0" topHeight="500px" topTitle="新增资源">
-                                <i class="layui-icon">&#xe654;</i>添加根菜单
-                            </button>
-                        </div>
-                        <div class="layui-col-md12">
-                            <table id="fsDatagrid" lay-filter="fsDatagrid" class="fsDatagrid" isLoad="1" url="api/v1/system/resources" isPage="1" sortType="1" pageSize="10" defaultForm="query_form" height="full-135"></table>
-                            <div class="fsDatagridCols">
-                                <p type="numbers" title="#" />
-                                <p checkbox="true" />
-                                <p field="name" title="名称" align="center" width="150" sort="true" />
-                                <p field="type" title="类型" align="center" width="150" dict="type" />
-                                <p field="path" title="资源路径" align="center" width="30%" sort="true" />
-                                <p field="state" title="状态" align="center" width="100" templet="#stateTpl" />
-                                <p field="remark" title="备注" align="center" width="100" />
-                                <p fixed="right" align="center" toolbar="#bar" title="操作" width="220" />
+                            <table id="fsTreeTable" lay-filter="fsTreeTable" class="fsTreeTable" isLoad="1" url="api/v1/system/permissions" defaultForm="query_form"></table>
+                            <div class="fsTreeTableCols">
+                                <p name="name" treeNodes="true" headerClass="value_col" />
+                                <p name="path" headerClass="value_col" colClass="value_col" style="width: 15%" />
                             </div>
-
-                            <script type="text/html" id="stateTpl">
-				                <input type="checkbox" name="state" lay-skin="switch" disabled lay-text="开启|关闭" {{ d.state == 0 ? 'checked' : '' }}>
-			                </script>
-                            <script type="text/html" id="bar">
-                                <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="top" topUrl="ui/system/resources/edit.html" topMode="readonly" topWidth="800px" topHeight="500px" topTitle="查看" inputs="id:">查看</a>
-                                <a class="layui-btn layui-btn-xs" lay-event="top" topUrl="ui/system/resources/edit.html" topWidth="800px" topHeight="500px" topTitle="编辑" inputs="id:">编辑</a>
-                                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="submit" url="api/v1/system/resources" method="DELETE" isConfirm="1" confirmMsg="是否确定删除当前记录？" inputs="id:">删除</a>
-                            </script>
                         </div>
                     </div>
                 </div>

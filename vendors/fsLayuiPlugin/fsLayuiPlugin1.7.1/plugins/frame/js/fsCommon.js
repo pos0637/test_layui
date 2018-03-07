@@ -48,7 +48,7 @@ layui.define(['layer', 'form', 'fsConfig', 'fsButtonCommon'], function (exports)
 			var url = "/fsbus/" + funcNo;
 			fsCommon.invoke(url, "POST", param, callBackFunc, async);
 		},
-		invoke: function (url, method, param, callBackFunc, async) {
+		invoke: function (url, method, param, callBackFunc, async, errorCallbackFunc) {
 			if (!$.isEmpty(servletUrl)) {
 				url = servletUrl + url;
 			}
@@ -62,14 +62,14 @@ layui.define(['layer', 'form', 'fsConfig', 'fsButtonCommon'], function (exports)
 					url += '/' + param['id'];
 					delete param['id'];
 				}
-				else {					
+				else {
 					method = "POST";
 					param['delete'] = param['id'];
 					delete param['id'];
 				}
 			}
 			else if ((method === "put") || (method === "PUT")) {
-				url += '/' + param['id'];				
+				url += '/' + param['id'];
 			}
 
 			$.ajax({
@@ -110,6 +110,7 @@ layui.define(['layer', 'form', 'fsConfig', 'fsButtonCommon'], function (exports)
 						}
 						//      	 console.error(errorThrown);
 					}
+					errorCallbackFunc && errorCallbackFunc();
 				},
 				complete: function (XMLHttpRequest, textStatus) {
 					//关闭加载层
