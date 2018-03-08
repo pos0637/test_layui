@@ -15,7 +15,8 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../vendors/layui-treetable/layui/css/layui.css" media="all" />
-    <link rel="stylesheet" type="text/css" href="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/contextMenu/jquery.contextMenu.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/contextMenu/jquery.contextMenu.min.css"
+    />
     <link rel="stylesheet" type="text/css" href="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/css/fs.css?v=1.7.1" />
     <script type="text/javascript" src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <script type="text/javascript" src="../../../vendors/fsLayuiPlugin/fsLayuiPlugin1.7.1/plugins/jquery/jquery.min.js"></script>
@@ -30,26 +31,28 @@
 <body>
     <div>
         <div class="layui-fluid">
-            <div class="layui-row layui-col-space1">                
+            <div class="layui-row layui-col-space1">
                 <div class="layui-col-md12">
-                    <div class="layui-form-query">
-                        <form class="layui-form" id="query_form">
-                            <div class="layui-form-item">
-                                <div class="layui-inline">
-                                    <button class="layui-btn" function="top" topUrl="ui/system/resources/add.html" topWidth="800px" isMaximize="0" topHeight="500px" topTitle="新增资源">
-                                        <i class="layui-icon">&#xe654;</i>添加根菜单
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
                     <div class="layui-row grid-resources">
                         <div class="layui-col-md12">
-                            <table id="fsTreeTable" lay-filter="fsTreeTable" class="fsTreeTable" isLoad="1" url="api/v1/system/permissions" defaultForm="query_form"></table>
+                            <button class="layui-btn" function="top" topUrl="ui/system/resources/add.html" topWidth="800px" isMaximize="0" topHeight="500px"
+                                topTitle="新增资源">
+                                <i class="layui-icon">&#xe654;</i>添加根菜单
+                            </button>
+                            <button class="layui-btn" function="refresh">
+                                <i class="layui-icon">&#x1002;</i>刷新
+                            </button>
+                        </div>
+                        <div class="layui-col-md12">
+                            <div id="fsTreeTable" lay-filter="fsTreeTable" class="fsTreeTable" isLoad="1" url="api/v1/system/permissions" defaultForm="query_form"></div>
                             <div class="fsTreeTableCols">
                                 <p name="name" treeNodes="true" headerClass="value_col" />
-                                <p name="path" headerClass="value_col" colClass="value_col" style="width: 15%" />
+                                <p name="path" headerClass="value_col" colClass="value_col" style="width: 15%" templet="#stateTpl" />
                             </div>
+
+                            <script type="text/html" id="stateTpl">
+				                {{ d.path ? d.path : '' }}
+			                </script>
                         </div>
                     </div>
                 </div>

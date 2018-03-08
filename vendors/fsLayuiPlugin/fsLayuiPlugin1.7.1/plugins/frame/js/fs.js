@@ -318,8 +318,8 @@ layui.fsUtil.digit = function (num, length, end) {
 				if (!$.isEmpty(_this.attr("colClass"))) {
 					col["colClass"] = _this.attr("colClass");
 				}
-				if (!$.isEmpty(_this.attr("render"))) {
-					col["render"] = _this.attr("render");
+				if (!$.isEmpty(_this.attr("templet"))) {
+					col["templet"] = _this.attr("templet");
 				}
 
 				colsArr.push(col);

@@ -1,7 +1,8 @@
-layui.define(['fsCommon', 'fsConfig', 'form', 'fsButtonCommon', 'tree'], function (exports) {
+layui.define(['fsCommon', 'fsConfig', 'form', 'fsButtonCommon', 'tree', 'laytpl'], function (exports) {
     var $ = layui.jquery,
         fsCommon = layui.fsCommon,
-        fsConfig = layui.fsConfig;
+        fsConfig = layui.fsConfig,
+        laytpl = layui.laytpl;
 
     FsTreeTable = function () {
         this.config = {
@@ -76,6 +77,16 @@ layui.define(['fsCommon', 'fsConfig', 'form', 'fsButtonCommon', 'tree'], functio
 
         if (!_this.config.layout) {
             _this.config.layout = _table.getTreeTableCols();
+            $.each(_this.config.layout, function (i, col) {
+                col["render"] = function (row) {
+                    var templet = col["templet"];
+                    if (templet) {
+                        return laytpl($(templet).html() || "").render(row);
+                    } else {
+                        return row[col["name"]];
+                    }
+                };
+            });
         }
 
         //执行渲染

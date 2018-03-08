@@ -166,7 +166,7 @@ layui.use(['fsForm', 'fsDatagrid', 'fsTree', 'fsTreeTable', 'fsCommon', 'element
 	/********* datagrid 处理   end *************/
 
 	/********* treetable 处理   start *************/
-	var treetableDoms = $("table.fsTreeTable");
+	var treetableDoms = $("div.fsTreeTable");
 	var treetables = {}
 
 	if (treetableDoms.length > 0) {
